@@ -1,0 +1,42 @@
+
+body {
+    background: linear-gradient(to bottom, #d1e7f0, #f8f9fa); /* Light blue gradient */
+    font-family: 'Georgia', serif; /* Elegant font for a book-like feel */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px; /* Width of the 'book' */
+    margin: 0 auto; /* Center align the container */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded corners */
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3; /* Dark blue for the title */
+}
+
+.poem {
+    border: 1px solid #dee2e6; /* Light gray border */
+    border-radius: 8px; /* Rounded corners for each poem */
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #f1f1f1; /* Slightly off-white background for poems */
+}
+
+h2 {
+    color: #b6d1ee; /* Dark blue for poem titles */
+}
+
+strong {
+    color: #cdb5c1; /* Accent color for 'Love...' and authors */
+}
+
+em {
+    color: #6c757d; /* Gray for date, time, place */
+}
