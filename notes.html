@@ -52,30 +52,117 @@
         .button:hover {
             background-color: #357ab8;
         }
+
+        .language-buttons {
+            margin: 20px 0;
+        }
+
+        .language-button {
+            margin: 0 5px;
+        }
+
+        .poems-section {
+            display: none; /* Hide all poems sections initially */
+        }
+
+        .active {
+            display: block; /* Show active section */
+        }
     </style>
+    <script>
+        function showPoems(language) {
+            // Hide all poem sections
+            var sections = document.querySelectorAll('.poems-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected language's poems
+            var selectedSection = document.getElementById(language);
+            selectedSection.classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>My Compositions</h1>
-        <div class="poem">
-            <span>“Pink”</span>
-            <button class="button" onclick="window.location.href='poemenglish1.html'">Read</button>
+        
+        <div class="language-buttons">
+            <button class="button language-button" onclick="showPoems('assamese')">Assamese</button>
+            <button class="button language-button" onclick="showPoems('english')">English</button>
+            <button class="button language-button" onclick="showPoems('hindi')">Hindi</button>
         </div>
-        <div class="poem">
-            <span>“Love Is Simple”</span>
-            <button class="button" onclick="window.location.href='poemenglish2.html'">Read</button>
+
+        <!-- Assamese Poems Section -->
+        <div id="assamese" class="poems-section active">
+            <div class="poem">
+                <span>“পিংক”</span>
+                <button class="button" onclick="window.location.href='poemassamese1.html'">পঢ়া</button>
+            </div>
+            <div class="poem">
+                <span>“ভাল পোৱা সৰল”</span>
+                <button class="button" onclick="window.location.href='poemassamese2.html'">পঢ়া</button>
+            </div>
+            <div class="poem">
+                <span>“তুমি মোৰ”</span>
+                <button class="button" onclick="window.location.href='poemassamese3.html'">পঢ়া</button>
+            </div>
+            <div class="poem">
+                <span>“এখন বেছি সময়”</span>
+                <button class="button" onclick="window.location.href='poemassamese4.html'">পঢ়া</button>
+            </div>
+            <div class="poem">
+                <span>“মধ্যরাতৰ আকাংক্ষা”</span>
+                <button class="button" onclick="window.location.href='poemassamese5.html'">পঢ়া</button>
+            </div>
         </div>
-        <div class="poem">
-            <span>“You're Mine”</span>
-            <button class="button" onclick="window.location.href='poemenglish3.html'">Read</button>
+
+        <!-- English Poems Section -->
+        <div id="english" class="poems-section">
+            <div class="poem">
+                <span>“Pink”</span>
+                <button class="button" onclick="window.location.href='poemenglish1.html'">Read</button>
+            </div>
+            <div class="poem">
+                <span>“Love Is Simple”</span>
+                <button class="button" onclick="window.location.href='poemenglish2.html'">Read</button>
+            </div>
+            <div class="poem">
+                <span>“You're Mine”</span>
+                <button class="button" onclick="window.location.href='poemenglish3.html'">Read</button>
+            </div>
+            <div class="poem">
+                <span>“One More Time”</span>
+                <button class="button" onclick="window.location.href='poemenglish4.html'">Read</button>
+            </div>
+            <div class="poem">
+                <span>“Midnight Longing…..”</span>
+                <button class="button" onclick="window.location.href='poemenglish5.html'">Read</button>
+            </div>
         </div>
-        <div class="poem">
-            <span>“One More Time”</span>
-            <button class="button" onclick="window.location.href='poemenglish4.html'">Read</button>
-        </div>
-        <div class="poem">
-            <span>“Midnight Longing…..”</span>
-            <button class="button" onclick="window.location.href='poemenglish5.html'">Read</button>
+
+        <!-- Hindi Poems Section -->
+        <div id="hindi" class="poems-section">
+            <div class="poem">
+                <span>“गुलाबी”</span>
+                <button class="button" onclick="window.location.href='poemhindi1.html'">पढ़ें</button>
+            </div>
+            <div class="poem">
+                <span>“प्यार सरल है”</span>
+                <button class="button" onclick="window.location.href='poemhindi2.html'">पढ़ें</button>
+            </div>
+            <div class="poem">
+                <span>“तुम मेरी हो”</span>
+                <button class="button" onclick="window.location.href='poemhindi3.html'">पढ़ें</button>
+            </div>
+            <div class="poem">
+                <span>“एक बार फिर”</span>
+                <button class="button" onclick="window.location.href='poemhindi4.html'">पढ़ें</button>
+            </div>
+            <div class="poem">
+                <span>“मध्यरात की इच्छा”</span>
+                <button class="button" onclick="window.location.href='poemhindi5.html'">पढ़ें</button>
+            </div>
         </div>
     </div>
 </body>
