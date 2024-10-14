@@ -3,226 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Poems</title>
+    <title>Poems List</title>
     <style>
         body {
-            margin: 0;
             font-family: 'Georgia', serif;
-            height: 100vh; /* Full height */
-            overflow: hidden; /* Hide overflow to prevent scroll bars */
-            display: flex; /* Centering content */
-            justify-content: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            position: relative; /* Positioning context for the background */
-            background: linear-gradient(135deg, #a8e0ff, #ffe0e0); /* Background gradient */
-            animation: gradientAnimation 15s ease infinite; /* Background animation */
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .container {
-            position: relative;
-            z-index: 1; /* Ensures the container is above the background */
-            max-width: 800px; /* Maximum width for larger screens */
-            width: 90%; /* Width for smaller screens */
-            background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
-            border-radius: 10px; /* Rounded corners */
-            padding: 20px; /* Padding inside the container */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            overflow-y: auto; /* Allow scrolling if content overflows */
-            max-height: 90vh; /* Limit the height to prevent overflow */
-            transition: transform 0.5s; /* Smooth transition for scaling */
+            width: 90%;
+            max-width: 400px; /* Adjust width */
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        .container:hover {
-            transform: scale(1.02); /* Slightly scale up on hover */
+        h1 {
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 20px;
         }
 
         .poem {
-            margin-bottom: 30px; /* Space between poems */
-            padding: 15px; /* Padding inside each poem section */
-            border-radius: 5px; /* Rounded corners for poems */
-            background: rgba(255, 255, 255, 0.9); /* White background for each poem */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-            opacity: 0; /* Start with hidden poems */
-            transform: translateY(20px); /* Slightly lower position */
-            animation: fadeInUp 0.5s forwards; /* Animation for poem appearance */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1; /* Fully visible */
-                transform: translateY(0); /* Move to original position */
-            }
+        .button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
         }
 
-        .poem:nth-child(1) { animation-delay: 0.2s; }
-        .poem:nth-child(2) { animation-delay: 0.4s; }
-        .poem:nth-child(3) { animation-delay: 0.6s; }
-        .poem:nth-child(4) { animation-delay: 0.8s; }
-        .poem:nth-child(5) { animation-delay: 1s; }
-        .poem:nth-child(6) { animation-delay: 1.2s; }
-        .poem:nth-child(7) { animation-delay: 1.4s; }
-        .poem:nth-child(8) { animation-delay: 1.6s; }
-        .poem:nth-child(9) { animation-delay: 1.8s; }
-        .poem:nth-child(10) { animation-delay: 2s; }
-        .poem:nth-child(11) { animation-delay: 2.2s; }
-        
-        h1 {
-            text-align: center; /* Center the title */
-            margin-bottom: 20px; /* Space below the title */
-            font-size: 2.5em; /* Increased title font size */
-            color: #d9534f; /* Title color */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Text shadow for depth */
-        }
-
-        h2 {
-            color: #333; /* Poem title color */
-            font-size: 1.8em; /* Poem title font size */
-            margin-bottom: 10px; /* Space below poem title */
-        }
-
-        p {
-            color: #555; /* Text color */
-            line-height: 1.6; /* Improved line spacing */
-            font-size: 1em; /* Standard font size */
-            margin: 5px 0; /* Space above and below paragraphs */
-            transition: color 0.3s; /* Smooth transition for text color */
-        }
-
-        p:hover {
-            color: #d9534f; /* Change color on hover */
-        }
-
-        p strong {
-            color: #d9534f; /* Color for emphasized text */
-            font-size: 1.1em; /* Slightly larger for strong text */
-        }
-
-        p em {
-            color: #6c757d; /* Color for italicized text */
-            font-size: 0.9em; /* Slightly smaller for italicized text */
+        .button:hover {
+            background-color: #357ab8;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>My Poems</h1>
-
-        <!-- Poem: Pink -->
         <div class="poem">
-            <h2>Pink</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 9th July, 2016</p>
-            <p><em>Time:</em> 0300 hours</p>
-            <p><em>Place:</em> Delhi, India</p>
-            <p>Sitting by the balcony of my little shelter, drop by drop memories pouring through my nerves saying "I want you now". Every drop contradicting with what you kept on denying all this while....... </p>
-            <p>Your eyes have deceived you, as they failed to hide the truth from me. Your smile's too on my side confessing "Yes, I too was longing for you." That look of your's expressing "I want to keep you in my eyes forever"...</p>
-            <p>You can't deny that you don't want me. I have just gestured all of you...... You love me which I know, you just don't want to admit it though..... No doubt that true love can be felt only in silence and in serenity. Its unspoken language can be understood by only those who are in love...... So don't stop....let it grow, let it take its time. Let it find us........</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nimi</p>
+            <span>“Pink”</span>
+            <button class="button" onclick="window.location.href='poemenglish1.html'">Read</button>
         </div>
-
-        <!-- Poem: Midnight Longing -->
         <div class="poem">
-            <h2>Midnight Longing</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 11th Oct. 2024</p>
-            <p><em>Time:</em> 0417 hours, a.m.</p>
-            <p><em>Place:</em> Lakhimi Ali, Nazira</p>
-            <p>That moment of last night of winter is making me crave for you..... It's getting refreshed.....that place too..... Your warm-cozy chest.....my fragile body.....</p>
-            <p>Cool moonlight elated the dark room..... Fragrance spread by sticks of sandalwood.....</p>
-            <p>Your soft touch on my nude skin..... That heavenly feeling.....through my nerves running.....</p>
-            <p>My heart still wants you beside me..... Except you..... I don't desire for any..... My heart still wants you beside me..... Except you..... I don't desire for any.....</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nirmita</p>
+            <span>“Love Is Simple”</span>
+            <button class="button" onclick="window.location.href='poemenglish2.html'">Read</button>
         </div>
-
-        <!-- Poem: कश्मकश -->
         <div class="poem">
-            <h2>कश्मकश</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 8th Aug, 2024</p>
-            <p><em>Time:</em> 2341 hours</p>
-            <p>मन करता है कि पुछु हाल क्या है उसके, मगर, याद आ जाती है वो बात जो कही थी उसने जाते जाते।</p>
-            <p>जाने के लिए भी तोह किया था मैंने ही उसको मजबूर....</p>
-            <p>ये कैसी कश्मकश है? उलझन है ये कैसी ? न करीब जा सकते उनके, न दूर जा पा रहे.....</p>
-            <p>उसने तो राह अपनी चुन ली और वो जा चुका था..... वक़्त भी बदल चुका था, और बाद उसके जाने के, बारी थी मेरी..... दस्तक भी थी बदलते वक्त की, की में भी अब चल पहुँ धीरे धीरे.....</p>
-            <p>मगर मैं थी ठहरी हुई बीते हुए वक़्त का सोचके, दिल भी देता था मशवरे बहुत सब्र रखने के.....</p>
-            <p>लोग मिले बहुत, बहुत गुफ्तगू भी हुई। पूछा उनलोगों ने बहुत कुछ, बहुत कुछ दिया जवाब मैंने भी..... पर मेरे सवाल थे गुम.....</p>
-            <p>कोशिश की सबने पास आने की, मगर कामयाब कोई नही..... क्योंकि ज़हन में था वही, वही था अपना..... नहीं थे खयाल किसी और के..... घर कर चुका था दिल में वो, वही रहता था वो। कैद हो चुकी थी में भी साथ उसके, कैद ऐसी, जिसको तोड़के बाहर मैं कभी न आना चाहती.....</p>
-            <p>मन करता है कि पुछु हाल क्या है उसके, मगर, याद आ जाती है वो बात जो कही थी उसने जाते जाते।</p>
-            <p>ये कैसी कश्मकश है? उलझन है ये कैसी ? न करीब जा सकते उनके, न दूर जा पा रहे....</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nimi</p>
+            <span>“You're Mine”</span>
+            <button class="button" onclick="window.location.href='poemenglish3.html'">Read</button>
         </div>
-
-        <!-- Poem: প্রত্যাশা দোভাগৰাতিৰ -->
         <div class="poem">
-            <h2>প্রত্যাশা দোভাগৰাতিৰ</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 11th Oct. 2024</p>
-            <p><em>Time:</em> 0417 hours, a.m.</p>
-            <p><em>Place:</em> Lakhimi Ali, Nazira</p>
-            <p>শীত কালৰ অন্তিম দোভাগৰাতিৰ সেই পলে দেহা উতনুৱা কৰিছে.....</p>
-            <p>পুনৰ এবাৰ সেই নিশাটি, সেই স্থান সতেজ হৈ বিৰিঙি উঠিছে.....</p>
-            <p>তোমাৰ উমাল বুকু..... মোৰ কঁপা কঁপা দেহা..... এন্ধাৰ কোঠা শীতল জোনৰ পোহৰে উজ্জ্বলি আছিল.....</p>
-            <p>চন্দনৰ ধূপ কাঠিৰ আবিৰ বিয়পি আছিল.....</p>
-            <p>গা শাত পৰা তোমাৰ কোমল পৰশ..... স্বর্গীয় সেই অনুভৱ..... আকলুৱা মনে মোৰ কাষত বিচাৰে কেৱল তোমাক.....</p>
-            <p>নাই কোনো আনলৈ হেঁপাহ..... আকলুৱা মনে মোৰ কাষত বিচাৰে কেৱল তোমাক.....</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nirmita</p>
+            <span>“One More Time”</span>
+            <button class="button" onclick="window.location.href='poemenglish4.html'">Read</button>
         </div>
-
-        <!-- Poem: I am your's today even.... -->
         <div class="poem">
-            <h2>I am your's today even....</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 8th Oct. 2024</p>
-            <p><em>Time:</em> 0131 hours, a.m.</p>
-            <p><em>Place:</em> Nazira, Assam</p>
-            <p>It's time that got us apart.... Roads once travelled together got depart....</p>
-            <p>Dreams of life lost.... Life's blank and upset.... I find no difference in day and night.... You found a new heart nice and cozy.... But I am still without one....</p>
-            <p>I too try to have a new one.... But I end up searching for you in everyone.... I now understand I am your's today even....</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nirmita</p>
-        </div>
-
-        <!-- Poem: One More Time -->
-        <div class="poem">
-            <h2>One More Time</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 8th Oct. 2024</p>
-            <p><em>Time:</em> 0024 hours, a.m.</p>
-            <p><em>Place:</em> Nazira, Assam</p>
-            <p>Come and set me free....</p>
-            <p>Let me live one more time....</p>
-            <p>Want to be someone's one more time.... Want to wake up to someone's touch one more time....</p>
-            <p>Want to wait for someone one more time....</p>
-            <p>Chains of the past are still keeping me wrapped up like a prisoner....</p>
-            <p>Come and set me free....</p>
-            <p>Let me live one more time....</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nirmita</p>
-        </div>
-
-        <!-- Add more poem sections as needed -->
-        <!-- Poem: আকৌ এবাৰ -->
-        <div class="poem">
-            <h2>আকৌ এবাৰ</h2>
-            <p><strong>By Nirmita Gogoi</strong></p>
-            <p><em>Date:</em> 7th Oct. 2024</p>
-            <p><em>Place:</em> Nazira, Assam</p>
-            <p><em>Time:</em> 1559 hours, p.m.</p>
-            <p>আকৌ এবাৰ জীয়াবৰ মন যায়..... মন যায় নিজকে কাৰোবাক অৰ্পণ কৰিবলৈ..... কাৰোবাৰ পৰশত জীপাল হৈ উঠিবলৈ.....</p>
-            <p>দুৱাৰ দলিত বহি কাৰোবাৰ বাট চাই ৰবলৈ..... পুৰণি স্মৃতিৰ শিকলিয়ে আঁতি আঁতি বান্ধি ৰাখিছে এতিয়াও.....</p>
-            <p>বিচাৰো মই মুক্ত হব..... বাট চাই আছো তোমাৰ আগমনৰ.... আহি মুক্ত কৰি দিয়া.... মোক আকৌ এবাৰ জীয়াবলৈ দিয়া.....</p>
-            <p><strong>Love.....</strong></p>
-            <p>Nirmita</p>
+            <span>“Midnight Longing…..”</span>
+            <button class="button" onclick="window.location.href='poemenglish5.html'">Read</button>
         </div>
     </div>
 </body>
