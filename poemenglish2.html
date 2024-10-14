@@ -5,85 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Is Simple - Poem</title>
     <style>
+        /* General body styling */
         body {
             font-family: 'Georgia', serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(to bottom right, #e0c3fc, #8ec5fc);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            perspective: 1000px; /* Needed for 3D effect */
         }
 
-        .container {
-            width: 90%;
-            max-width: 300px; /* Adjusted for smaller width */
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: justify; /* Justifies the text */
+        /* Container for the book */
+        .book-container {
+            width: 90%; /* Set to 90% of the viewport width for mobile */
+            max-width: 400px; /* Maximum width for larger screens */
+            height: 500px; /* Height remains the same */
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+            margin: 0 10px; /* Margin to avoid touching the edges */
         }
 
-        h1 {
-            font-size: 22px;
-            text-align: center;
-            color: #000000;
-        }
-
-        p {
-            font-size: 14px; /* Smaller font size for mobile view */
-            line-height: 1.6;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .button {
+        /* Book cover styling */
+        .cover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
             background-color: #4a90e2;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px; /* Adjusted font size for the cover */
+            color: white;
+            text-align: center;
+            padding: 10px; /* Added padding for better fit */
+        }
+
+        /* Book content (inside pages) */
+        .content {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: rotateY(-180deg);
+            backface-visibility: hidden;
+            text-align: justify;
+            font-size: 16px; /* Font size for better readability */
+            line-height: 1.5; /* Adjusted line height for better spacing */
+            overflow-y: auto; /* Added scrolling if the content exceeds the height */
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        /* Book open class (3D rotation) */
+        .open-book {
+            transform: rotateY(-160deg);
+        }
+
+        /* Book close class */
+        .close-book {
+            transform: rotateY(0deg);
+        }
+
+        /* Poem styling */
+        p {
+            margin: 0; /* Removed margin to prevent extra spacing */
+            padding: 5px 0; /* Added padding for better spacing between paragraphs */
+        }
+
+        /* Button styling */
+        .button {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: white;
             border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block; /* Center the button */
         }
 
+        /* Button hover effect */
         .button:hover {
-            background-color: #357ab8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 20px; /* Adjust heading size for smaller screens */
-            }
+        /* Positioning for the Next and Previous buttons */
+        .button-container {
+            position: absolute; /* Position relative to the book */
+            width: 100%;
+            padding: 10px; /* Padding for button container */
+            box-sizing: border-box; /* Ensure padding is included */
+        }
 
-            p {
-                font-size: 12px; /* Adjust paragraph size for smaller screens */
-            }
+        .next-button {
+            position: absolute; /* Absolute positioning for the button */
+           /* Move it down */
+            right: 10px;bottom: 200px;  /* Adjust to position */
+        }
+
+        .previous-button {
+            position: absolute; /* Absolute positioning for the button */
+            top: 200px;/* Move it up */
+            right: 10px; /* Adjust to position */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>“Love Is Simple”</h1>
-        <p>By- Nirmita <br> On- 1st Oct. 2024 <br> @ 0352 hours, a.m. <br> Place- Nazira, Assam, India</p>
-        <p>Love is simple…..it can be felt in simple things. Like, a Hi !! meaning…I was remembering you. Or….”কত আছা ? (where are you) “ meaning…. I was concerned about you…..</p>
-        <p>A call or a missed one…..meaning…I was missing you and was wanting to listen to your voice……</p>
-        <p>Love is just love…..it does not show proudness and does not dishonour others. It is not self seek…..and keeps no records of our negatives. It does not delight anything but rejoices the truth. It always protects, always trusts, always hopes and always perseveres……</p>
-        <p>Love never fails…. We will never know how lucky we are to spend the rest of our life with the other half of our soul……until we’ll have to spend their's without…..</p>
-        <p>Love…..<br>Nirmita…..</p>
-        
-        <!-- Button Container for Previous and Next -->
-        <div class="button-container">
-            <button class="button" onclick="window.location.href='poemenglish1.html'">Previous</button> <!-- Change to your previous poem page -->
-            <button class="button" onclick="window.location.href='poemenglish3.html'">Next</button> <!-- Change to your next poem page -->
+
+    <!-- Book container holding the front and content -->
+    <div id="book" class="book-container">
+        <!-- Cover (Front) -->
+        <div class="cover">“Love Is Simple”</div>
+        <!-- Content (inside pages) -->
+        <div class="content">
+            <p>By- Nirmita <br> On- 1st Oct. 2024 <br> @ 0352 hours, a.m. <br> Place- Nazira, Assam, India</p>
+            <p>Love is simple…..it can be felt in simple things. Like, a Hi !! meaning…I was remembering you. Or….”কত আছা ? (where are you) “ meaning…. I was concerned about you…..</p>
+            <p>A call or a missed one…..meaning…I was missing you and was wanting to listen to your voice……</p>
+            <p>Love is just love…..it does not show proudness and does not dishonour others. It is not self seek…..and keeps no records of our negatives. It does not delight anything but rejoices the truth. It always protects, always trusts, always hopes and always perseveres……</p>
+            <p>Love never fails…. We will never know how lucky we are to spend the rest of our life with the other half of our soul……until we’ll have to spend their's without…..</p>
+            <p>Love…..<br>Nirmita…..</p>
         </div>
     </div>
+
+    <!-- Button container for Next and Previous -->
+    <div class="button-container">
+        <button class="button previous-button" onclick="window.location.href='poemenglish1.html'">Previous</button>
+        <button class="button next-button" onclick="window.location.href='poemenglish3.html'">Next</button>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="button" onclick="toggleBook()" style="margin-top: 20px;">Open/Close Book</button>
+
+    <script>
+        // Function to toggle book open/close
+        let isOpen = false;
+
+        function toggleBook() {
+            const book = document.getElementById('book');
+            if (isOpen) {
+                // Close the book
+                book.classList.remove('open-book');
+                book.classList.add('close-book');
+            } else {
+                // Open the book
+                book.classList.remove('close-book');
+                book.classList.add('open-book');
+            }
+            isOpen = !isOpen; // Toggle the state
+        }
+    </script>
 </body>
 </html>
